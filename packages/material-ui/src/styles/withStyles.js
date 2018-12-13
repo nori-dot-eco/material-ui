@@ -3,7 +3,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import hoistNonReactStatics from 'hoist-non-react-statics';
 import { getDisplayName, ponyfillGlobal } from '@material-ui/utils';
 import { create } from 'jss';
 import ns from './reactJssContext';
@@ -307,8 +306,6 @@ const withStylesOld = (stylesOrCreator, options = {}) => Component => {
   if (process.env.NODE_ENV !== 'production') {
     WithStyles.displayName = `WithStyles(${getDisplayName(Component)})`;
   }
-
-  hoistNonReactStatics(WithStyles, Component);
 
   if (process.env.NODE_ENV !== 'production') {
     // Exposed for test purposes.

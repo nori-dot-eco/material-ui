@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import hoistNonReactStatics from 'hoist-non-react-statics';
 import { getDisplayName } from '@material-ui/utils';
 import { ThemeContext } from './ThemeProvider';
 
@@ -26,7 +25,6 @@ const withTheme = () => Component => {
     WithTheme.displayName = `WithTheme(${getDisplayName(Component)})`;
   }
 
-  hoistNonReactStatics(WithTheme, Component);
 
   return WithTheme;
 };

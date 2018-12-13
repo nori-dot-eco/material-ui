@@ -2,7 +2,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import hoistNonReactStatics from 'hoist-non-react-statics';
 import { getDisplayName, ponyfillGlobal } from '@material-ui/utils';
 import createMuiTheme from './createMuiTheme';
 import themeListener from './themeListener';
@@ -63,8 +62,6 @@ const withThemeOld = () => Component => {
   if (process.env.NODE_ENV !== 'production') {
     WithTheme.displayName = `WithTheme(${getDisplayName(Component)})`;
   }
-
-  hoistNonReactStatics(WithTheme, Component);
 
   if (process.env.NODE_ENV !== 'production') {
     // Exposed for test purposes.
